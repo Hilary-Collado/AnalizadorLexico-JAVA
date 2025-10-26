@@ -16,8 +16,6 @@ Cada token representa un componente del lenguaje, como palabras reservadas, iden
    - Línea y columna del código fuente
 4. Los resultados se muestran en una interfaz visual con una tabla de tokens, lista de errores y botones de acción.
 
-
-
 # Características
  **Análisis léxico completo** con detección de palabras clave, números, cadenas, operadores y delimitadores  
  **Interfaz gráfica moderna** desarrollada en Java Swing  
@@ -41,6 +39,15 @@ int x = 10;
 float y = 2.5;
 string msg = "Hola mundo!";
 bool ok = true;
+
+
+# Ejecutable del Proyecto
+El archivo ejecutable del analizador léxico se encuentra en la carpeta [`/dist`](./dist/AnalizadorLexico_HC.jar).
+
+### Cómo ejecutarlo:
+1. Descargue el archivo `.jar`.
+2. Ejecútelo con el siguiente comando:
+   java -jar AnalizadorLexico_HC.jar
 
 
 # Hilary Collado
