@@ -47,6 +47,7 @@ El archivo ejecutable del analizador léxico se encuentra en la carpeta [`/dist`
 ### Cómo ejecutarlo:
 1. Descargue el archivo `.jar`.
 2. Ejecútelo con el siguiente comando:
+   ```bash
    java -jar AnalizadorLexico_HC.jar
 
 
