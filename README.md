@@ -1,9 +1,10 @@
-# 🧠 Analizador Léxico (Java + JFlex + Swing)
+
+# Analizador Léxico (Java + JFlex + Swing)                                                                                       # Hilary Collado
 
 Este proyecto implementa un **analizador léxico gráfico** desarrollado en **Java** utilizando **JFlex** para la generación del analizador, y **Swing** para la interfaz de usuario.  
 ---
 
-## ⚙️ ¿Cómo funciona?
+# ¿Cómo funciona?
 
 El analizador léxico es la primera fase de un compilador.  
 Su función es **leer el código fuente** y **dividirlo en unidades léxicas llamadas *tokens***.  
@@ -20,17 +21,17 @@ Cada token representa un componente del lenguaje, como palabras reservadas, iden
 
 ---
 
-## 💻 Características
+# Características
 
-- 🧩 **Análisis léxico completo** con detección de palabras clave, números, cadenas, operadores y delimitadores  
-- 🎨 **Interfaz gráfica moderna** desarrollada en Java Swing  
-- 📋 **Exportación de tokens a CSV**  
-- ⚡ **Cargar código demo** y **botón de limpieza rápida**  
-- 🧮 **Tabla con diseño tipo “zebra”** (filas alternadas en color claro y oscuro)
+ **Análisis léxico completo** con detección de palabras clave, números, cadenas, operadores y delimitadores  
+ **Interfaz gráfica moderna** desarrollada en Java Swing  
+ **Exportación de tokens a CSV**  
+ **Cargar código demo** y **botón de limpieza rápida**  
+ **Tabla con diseño tipo “zebra”** (filas alternadas en color claro y oscuro)
 
 ---
 
-## 🧰 Tecnologías utilizadas
+# Tecnologías utilizadas
 
 | Componente | Tecnología / Herramienta |
 |-------------|---------------------------|
@@ -42,7 +43,7 @@ Cada token representa un componente del lenguaje, como palabras reservadas, iden
 
 ---
 
-## 🧪 Ejemplo de uso
+# Ejemplo de uso
 
 **Entrada (MiniLang):**
 ```c
@@ -51,5 +52,3 @@ float y = 2.5;
 string msg = "Hola mundo!";
 bool ok = true;
 
-## Autora
-**Hilary Collado**
