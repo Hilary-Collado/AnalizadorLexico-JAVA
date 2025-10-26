@@ -2,7 +2,7 @@ package com.hilary.lexer;
 
 public class Token {
     public final TokenType type;
-    public final String lexeme;
+    public final String lexeme; 
     public final int line;
     public final int column;
 
