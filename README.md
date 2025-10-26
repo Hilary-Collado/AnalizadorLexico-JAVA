@@ -1,5 +1,5 @@
 
-# Analizador Léxico (Java + JFlex + Swing)                                                                                       # Hilary Collado
+# Analizador Léxico (Java + JFlex + Swing)                                                                                      
 
 Este proyecto implementa un **analizador léxico gráfico** desarrollado en **Java** utilizando **JFlex** para la generación del analizador, y **Swing** para la interfaz de usuario.  
 ---
@@ -46,9 +46,10 @@ Cada token representa un componente del lenguaje, como palabras reservadas, iden
 # Ejemplo de uso
 
 **Entrada (MiniLang):**
-```c
 int x = 10;
 float y = 2.5;
 string msg = "Hola mundo!";
 bool ok = true;
 
+
+# Hilary Collado
