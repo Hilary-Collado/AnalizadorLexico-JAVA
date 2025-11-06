@@ -10,9 +10,12 @@ import java.awt.geom.RoundRectangle2D;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import com.hilary.parser.Parser;
+import com.hilary.ast.Program;
+import  com.hilary.sema.SemanticAnalyzer;
+import java.io.StringReader;
 
 public class LexerRunner extends JFrame {
-
     // ===== Paleta =====
     private static final Color BG_APP         = new Color(0xF7F8FB);
     private static final Color BG_PANEL       = Color.WHITE;
@@ -167,6 +170,21 @@ public class LexerRunner extends JFrame {
         JButton analyze  = new PillButton("Analizar", GRAD_PURPLE_A, GRAD_PURPLE_B); // como “Email”
         analyze.addActionListener(this::onAnalyze);
 
+        JButton parseBtn = new PillButton("Parse + Semántica", GRAD_BLUE_A, GRAD_BLUE_B);
+        parseBtn.addActionListener(ev -> {
+            try {
+                Parser parser = new Parser(new StringReader(inputArea.getText()));
+                Program prog = parser.parse();
+                new SemanticAnalyzer().check(prog);
+                errorArea.setForeground(new Color(0x065F46));
+                errorArea.setText("Sintaxis OK.\nSemántica OK.");
+            } catch (Exception ex) {
+                errorArea.setForeground(new Color(180, 0, 0));
+                errorArea.setText(ex.getMessage());
+            }
+        });
+        bar.add(parseBtn);
+
         JButton exportCsv= new PillButton("Exportar tokens (CSV)", GRAD_GREEN_A, GRAD_GREEN_B);
         exportCsv.addActionListener(this::onExportCsv);
 
@@ -229,6 +247,21 @@ public class LexerRunner extends JFrame {
             LexerAdapter.Result result = adapter.run(reader);
             fillTable(result.tokens);
             fillErrors(result.errors);
+
+            Parser parser = new Parser(new StringReader(inputArea.getText()));
+            Program prog = parser.parse();
+
+            new SemanticAnalyzer().check(prog); // si hay error semántico, lanza excepción
+
+            // 3) Si todo ok, mostramos estado en el área de errores
+            if (result.errors.isEmpty()) {
+                errorArea.setForeground(new Color(0x065F46)); // verde ok
+                errorArea.setText("Sin errores léxicos.\nSintaxis OK.\nSemántica OK.");
+            } else {
+                // ya se mostraron errores léxicos; pero igual indicamos que sintaxis/semántica pasaron
+                errorArea.append("\nSintaxis OK.\nSemántica OK.");
+            }
+
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error durante el análisis: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
